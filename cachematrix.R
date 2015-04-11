@@ -21,14 +21,14 @@ makeCacheMatrix <- function(x = matrix()) {
 		inv_m <<- NULL
 	}
 
-    # Getter method to acquire the original matrix
+    	# Getter method to acquire the original matrix
 	get <- function() x
 
-    # set and get inverted matrix.
+    	# set and get inverted matrix.
 	set_inverse_matrix <- function(inv) inv_m <<- inv
 	get_inverse_matrix <- function() inv_m
 
-    # return the list of methods for inversion operation
+	 # return the list of methods for inversion operation
 	list(set = set, get = get, 
 		set_inverse_matrix = set_inverse_matrix, 
 		get_inverse_matrix = get_inverse_matrix)
@@ -43,25 +43,25 @@ makeCacheMatrix <- function(x = matrix()) {
 # OUTPUT <- Inverted Matrix
 cacheSolve <- function(x, ...) {
 
-    # Get the inverted matrix
+    	# Get the inverted matrix
 	inv_m <- x$get_inverse_matrix()
 
-    # if it is already inverted, return the inverted one
+    	# if it is already inverted, return the inverted one
 	if(!is.null(inv_m)) {
 		message("getting cached inverse matrix")
 		return(inv_m)
 	}
     
-    # if it is not inverted, acquire the matrix and invert it
+    	# if it is not inverted, acquire the matrix and invert it
 	data <- x$get()
 
-    # Only a square matrix can be inverted. Ensure the given matrix is invertible
+    	# Only a square matrix can be inverted. Ensure the given matrix is invertible
 	inv_m <- solve(data, ...)
 
-    # ensure the inverted matrix is cached
-    x$set_inverse_matrix(inv_m)
+    	# ensure the inverted matrix is cached
+    	x$set_inverse_matrix(inv_m)
 
-    # return the inverted matrix
+    	# return the inverted matrix
 	inv_m
 
 }
