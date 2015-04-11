@@ -1,5 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
+## There are 2 functions makeCacheMatrix & cacheSolve
+## makeCacheMatrix is a helper function which cache the 
+## inversion of a given square matrix. 
+## cacheSolve function computes the invert for the given 
+## cachedMatrix list object created by makeCacheMatrix function.
 
 # makeCacheMatrix function takes a 'matrix' object as input and
 # returns list of methods operated on the given matrix to cache
