@@ -12,7 +12,8 @@
 # INPUT <- A Square Matrix object
 # OUTPUT <- A List Object holding functions to operate on the matrix and its invert
 makeCacheMatrix <- function(x = matrix()) {
-
+	
+	# Initialize inverted matrix
 	inv_m <- NULL
 	set <- function(y) {
 		x <<- y
